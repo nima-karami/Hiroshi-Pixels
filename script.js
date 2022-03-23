@@ -1,45 +1,34 @@
  // Initiate variables
- var columnCount = 150;
- var rowCount = 100;
- var colorCount = 2;
+ var columnCount = 20;
+ var rowCount = 10;
+ var shapeCount = 2;
  var iteration = 0;
  const counter = 20;
  
- // Generates a matrix with random color values assigned to each point.
- function generate_matrix (columnCount, rowCount, colorCount) {
-     // Initiate variables
-     let matrix = [[]]; 
-     let color = 0;
-     let colorsList = [0,120,240];
-     let gridCount = columnCount * rowCount ;
-     let colorIndex = 0;
- 
-     // Generate an empty matrix
-     for (let j = 0; j < rowCount; j++) {
-             let colorsColumn = []
-         for (let i = 0; i < columnCount; i++) {
-             colorsColumn[i] = 0 ;           
-         }
-             matrix[j] = colorsColumn ;
-     }
-     
-     // Generate random values between 0 and 360 for a number of colors    
-     for (let i = 0; i < gridCount; i++) {
-         color = Math.floor(Math.random()*colorCount)*360/colorCount;
-     colorsList[i] = color;
-     } 
- 
-     // Put the color values into a list
-     for (let j = 0; j < rowCount; j++) {
-             for (let i = 0; i < columnCount; i++) {
-             colorIndex = i+j*columnCount;
-             matrix[j][i] = colorsList[colorIndex] ;           
-     }     
-     }
-     
-     // Return results  	
-     return matrix;
- }
+
+ // Generates a random integer between 0 and max
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
+
+// Generates a matrix with random color values assigned to each point.
+function generateRandomMatrix (rowCount, columnCount, maxValue) {
+    // Initiate variables
+    let matrix = []
+
+    // Generate a matrix and fill it with random numbers between 0 and maxValue.
+    for (let i = 0; i < rowCount; i++) {
+        let matrixRow = [];
+        for (let j = 0; j < columnCount; j++) {
+            matrixRow[j] = getRandomInt(maxValue);
+        }
+        matrix[i] = matrixRow;
+    }
+    return matrix;
+}
+
+
  
  // Get the values for the neighboring cells for a given cell in a matrix
  function get_neighbors(x, y, matrix) {
@@ -103,18 +92,17 @@
      return newMatrix;
  }
  
- // Convert a matrix to a list
- function matrix_to_list (matrix) {
-     let rowCount = matrix.length;
-     let columnCount = matrix[0].length;
-     let list = [];
-     let itemIndex = 0;
-     for (j = 0; j < rowCount; j++) {
-         for (i = 0; i < columnCount; i++) {
-     itemIndex = i + j*columnCount;
-     list[itemIndex] = matrix[j][i];
-     
-     }
+// Convert a matrix to a list
+function matrix_to_list (matrix) {
+    let rowCount = matrix.length;
+    let columnCount = matrix[0].length;
+    let list = [];
+    let itemIndex = 0;
+    for (i = 0; i < rowCount; i++) {
+        for (j = 0; j < columnCount; j++) {
+            itemIndex = j + i*columnCount;
+            list[itemIndex] = matrix[i][j];
+        }
      }
      return list;
  }
@@ -130,70 +118,69 @@
      let color = 0;
      let colorsList = matrix_to_list (matrix);
      
-     // Generate the HTML code
-     for (let i = 0; i < gridCount; i++) {
-         color = colorsList[i] ;
-     gridHTML += '<div class="grid-item" style="background-color:hsl('+ color +', 80%, 50%)" id="' + i + '">'+ " " + '</div>';   
-     }
+    // Generate the HTML code
+    for (let i = 0; i < gridCount; i++) {
+        color = colorsList[i] ;
+        gridHTML += '<div id = pixel-'+ i + ' class="grid-item"'+ value + '</div>';   
+    }
      
-     // Generate the CSS code | Column style
-     for (let i = 0; i < columnCount; i++) {
-         gridCSSColumns += "auto ";
-     }
+    // Generate the CSS code | Column style
+    for (let i = 0; i < columnCount; i++) {
+        gridCSSColumns += "auto ";
+    }
+    
+    // Generate the CSS code | Row style
+    for (let i = 0; i < rowCount; i++) {
+        gridCSSRows += "auto ";
+    }
      
-     // Generate the CSS code | Row style
-     for (let i = 0; i < rowCount; i++) {
-         var height = 100/rowCount ;
-     gridCSSRows += height + "vh ";
-     }
-     
-     // Insert the HTML and CSS codes
-     document.getElementById("my-grid").innerHTML = gridHTML;
-     document.getElementById("my-grid").style.gridTemplateColumns = gridCSSColumns;
-     document.getElementById("my-grid").style.gridTemplateRows = gridCSSRows;
-     // document.getElementById("demo").innerHTML = get_neighbors(0, 0, matrix);
+    // Insert the HTML and CSS codes
+    document.getElementById("my-grid").innerHTML = gridHTML;
+    document.getElementById("my-grid").style.gridTemplateColumns = gridCSSColumns;
+    document.getElementById("my-grid").style.gridTemplateRows = gridCSSRows;
+    // document.getElementById("demo").innerHTML = get_neighbors(0, 0, matrix);
  }
  
  // FUNCTIONS TO USE AS BUTTON ON THE PAGE 
  
  function add_column() {
      columnCount += counter;
-     colorsMatrix = generate_matrix (columnCount, rowCount, colorCount);
+     colorsMatrix = generateRandomMatrix (rowCount, columnCount, maxValue);
      generate_grid (colorsMatrix); 
  }
  
  function remove_column() {
      if (columnCount > 1) {
          columnCount -= counter;
-         colorsMatrix = generate_matrix (columnCount, rowCount, colorCount);
+         colorsMatrix = generateRandomMatrix (rowCount, columnCount, maxValue);
      generate_grid (colorsMatrix); 
      }
  }
      
  function add_row() {
      rowCount += counter;
-     colorsMatrix = generate_matrix (columnCount, rowCount, colorCount);
+     colorsMatrix = generateRandomMatrix (rowCount, columnCount, maxValue);
      generate_grid (colorsMatrix); 
  }
  
  function remove_row() {
      if (rowCount > 1) {
          rowCount -= counter;
-         colorsMatrix = generate_matrix (columnCount, rowCount, colorCount);
+         colorsMatrix = generateRandomMatrix (rowCount, columnCount, maxValue);
      generate_grid (colorsMatrix); 
      }
  }
  
  function add_color() {
-     colorCount += 1;
-     colorsMatrix = generate_matrix (columnCount, rowCount, colorCount);
+     shapeCount += 1;
+     colorsMatrix = generateRandomMatrix (rowCount, columnCount, maxValue);
      generate_grid (colorsMatrix); 
  }
  
  function remove_color() {
-     if (colorCount > 1) {
-         colorCount -= 1;
-         colorsMatrix = generate_matrix (columnCount, rowCount, colorCount);
+     if (shapeCount > 1) {
+         shapeCount -= 1;
+         colorsMatrix = generateRandomMatrix (rowCount, columnCount, maxValue);
      generate_grid (colorsMatrix); 
      }
  }
@@ -207,14 +194,14 @@
  function reset() {
      columnCount = 150;
      rowCount = 100;
-     colorCount = 2;
+     shapeCount = 2;
      iteration = 0;
      
-     colorsMatrix = generate_matrix (columnCount, rowCount, colorCount);
+     colorsMatrix = generateRandomMatrix (rowCount, columnCount, maxValue);
      generate_grid (colorsMatrix);
  }
  
- colorsMatrix = generate_matrix (columnCount, rowCount, colorCount);
+ colorsMatrix = generateRandomMatrix (rowCount, columnCount, maxValue);
  generate_grid (colorsMatrix);
  
  

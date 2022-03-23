@@ -42,3 +42,25 @@ body {
     color: white;
     cursor: pointer;
 }
+
+.grid-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto;
+    background-color: red;
+    padding: 0px;
+}
+
+.grid-item {
+    /* background-color: red); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: auto;
+    border: 0px;
+    font-size: 30px;
+    text-align: center;
+}
+
