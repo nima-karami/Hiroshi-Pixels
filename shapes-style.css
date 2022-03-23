@@ -2,7 +2,12 @@
     display:flex;
     justify-content: center;
     align-items: center;
+    visibility: hidden;
+}
 
+.visible-text {
+    visibility: visible;
+    color:grey
 }
 
 /* .triangle-up {

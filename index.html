@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" type = "text/css" href="style.css">
     <link rel="stylesheet" type = "text/css" href="shapes-style.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    
 </head>
 <body>
     <div id="my-grid" class="grid-container">
@@ -27,12 +27,13 @@
     <div id = "control_panel">
         <h3>Control Panel</h3>
         <div class = "container">
-            <button class = "button" onclick="removeColumn()">Column -</button>
-            <button class = "button"  onclick="addColumn()">Column +</button>
-            <button class = "button"  onclick="removeRow()">Rows -</button>
+            <button class = "button"  onclick="toggleValues()">Toggle Values</button>
             <button class = "button"  onclick="addRow()">Rows +</button>
+            <button class = "button"  onclick="removeRow()">Rows -</button>
+            <button class = "button"  onclick="addColumn()">Column +</button>
+            <button class = "button" onclick="removeColumn()">Column -</button>
+            <button class = "button"  onclick="addVariance()">Variance +</button>            
             <button class = "button"  onclick="removeVariance()">Variance -</button>
-            <button class = "button"  onclick="addVariance()">Variance +</button>
             <button class = "button"  onclick="reset()">Reset</button>
             <button class = "button" id="next-gen"  onclick="nextIteration()">Next Gen</button>
         </div>

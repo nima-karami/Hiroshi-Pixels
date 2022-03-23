@@ -4,19 +4,20 @@
  var shapeCount = 3;
  var iteration = 0;
  const counter = 5;
- 
+ var showValues = false;
+
  // Refer to shape-style.css
  var shapeList = [
-    '<div class ="shape square">0</div>',
-    '<div class ="shape circle">1</div>',
-    '<div class ="shape triangle-up">2</div>',
-    '<div class ="shape rectangle-h">3</div>',
-    '<div class ="shape rectangle-v">4</div>',
-    '<div class ="shape rectangle-v">5</div>',
-    '<div class ="shape rectangle-v">6</div>',
-    '<div class ="shape rectangle-v">7</div>',
-    '<div class ="shape rectangle-v">8</div>',
-    '<div class ="shape rectangle-v">9</div>'
+    '<div class ="shape">0</div>',
+    '<div class ="shape">1</div>',
+    '<div class ="shape">2</div>',
+    '<div class ="shape">3</div>',
+    '<div class ="shape">4</div>',
+    '<div class ="shape">5</div>',
+    '<div class ="shape">6</div>',
+    '<div class ="shape">7</div>',
+    '<div class ="shape">8</div>',
+    '<div class ="shape">9</div>'
      ]
 
  // Generates a random integer between 0 and max
@@ -211,10 +212,31 @@ function reset() {
     refreshGrid()
 }
 
+function toggleValues() {
+    
+    let elements = document.getElementsByClassName('shape');
+    
+    if (showValues) {
+        for (let i=0; i <elements.length; i++) {
+            elements[i].classList.remove("visible-text");
+            showValues = false;
+        }
+    }
+    
+    else {
+        for (let i=0; i <elements.length; i++) {
+            elements[i].classList.add("visible-text");
+            showValues = true;
+        }
+    }
+    
+}
+
 // Generate a new matrix and reload
 function refreshGrid() {
     let newMatrix = generateRandomMatrix (rowCount, columnCount, shapeCount);
     matrixToGrid (newMatrix)
+
 }
 
 refreshGrid(); 
