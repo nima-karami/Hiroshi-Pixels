@@ -1,0 +1,55 @@
+.shape {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* .triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 50% solid transparent;
+    border-right: 50% solid transparent;
+    border-bottom: 100% solid black;
+  } */
+
+.value-0 {
+    background-color: white;
+}
+
+.value-1 {
+    background-color: black;
+}
+
+.value-2 {
+    background-color: red;
+}
+
+.value-3 {
+    background-color: blue;
+}
+
+.value-4 {
+    background-color: yellow;
+}
+
+.value-5 {
+    background-color: orange;
+}
+
+.value-6 {
+    background-color: purple;
+}
+
+.value-7 {
+    background-color: pink;
+}
+
+.value-8 {
+    background-color: grey;
+}
+
+.value-9 {
+    background-color: red;
+}
+

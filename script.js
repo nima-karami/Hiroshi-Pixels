@@ -5,6 +5,19 @@
  var iteration = 0;
  const counter = 5;
  
+ // Refer to shape-style.css
+ var shapeList = [
+    '<div class ="shape square">0</div>',
+    '<div class ="shape circle">1</div>',
+    '<div class ="shape triangle-up">2</div>',
+    '<div class ="shape rectangle-h">3</div>',
+    '<div class ="shape rectangle-v">4</div>',
+    '<div class ="shape rectangle-v">5</div>',
+    '<div class ="shape rectangle-v">6</div>',
+    '<div class ="shape rectangle-v">7</div>',
+    '<div class ="shape rectangle-v">8</div>',
+    '<div class ="shape rectangle-v">9</div>'
+     ]
 
  // Generates a random integer between 0 and max
 function getRandomInt(max) {
@@ -121,7 +134,7 @@ function matrixToList (matrix) {
     // Generate the HTML code
     for (let i = 0; i < gridCount; i++) {
         value = valueList[i] ;
-        gridHTML += '<div id = pixel-'+ i + ' class="grid-item value-'+value+'">'+ value + '</div>';   
+        gridHTML += '<div id = pixel-'+ i + ' class="grid-item value-'+value+'">'+ shapeList[value] + '</div>';   
     }
      
     // Generate the CSS code | Column style
@@ -169,12 +182,14 @@ function matrixToList (matrix) {
     }
  }
  
-function addColor() {
-    shapeCount += 1;
-    refreshGrid()
+function addVariance() {
+    if (shapeCount <10) {
+        shapeCount += 1;
+        refreshGrid()
+    }
 }
  
-function removeColor() {
+function removeVariance() {
     if (shapeCount > 1) {
         shapeCount -= 1;
         refreshGrid()

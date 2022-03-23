@@ -55,9 +55,9 @@ body {
 
 .grid-item {
     /* background-color: red); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: auto ;
+    grid-template-rows: auto;
     padding: auto;
     border: 0px;
     font-size: 0.5em;
