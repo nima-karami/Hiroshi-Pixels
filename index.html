@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hiroshi Pixels</title>
+
+    <link rel="stylesheet" type = "text/css" href="style.css">
 </head>
 <body>
-    
+    <div id = "control_panel">
+        <h3>Control Panel</h3>
+        <div class = "container">
+            <button class = "button" onclick="remove_column()">Column -</button>
+            <button class = "button"  onclick="add_column()">Column +</button>
+            <button class = "button"  onclick="remove_row()">Rows -</button>
+            <button class = "button"  onclick="add_row()">Rows +</button>
+            <button class = "button"  onclick="remove_color()">Color -</button>
+            <button class = "button"  onclick="add_color()">Color +</button>
+            <button class = "button"  onclick="reset()">Reset</button>
+            <button class = "button" id="next-gen"  onclick="next_iteration()">Next Gen</button>
+        </div>
+
+
+    </div>
 </body>
-</html>
+</html> 
