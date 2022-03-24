@@ -1,9 +1,9 @@
 // Initiate variables
-var columnCount = 20;
-var rowCount = 10;
-var shapeCount = 3;
+var columnCount = 0;
+var rowCount = 0;
+var shapeCount = 0;
 var iteration = 0;
-const counter = 5;
+const multiplier = 10;
 var showValues = false;
 var valuesMatrix = [[]]
 
@@ -27,6 +27,16 @@ var shapeList = [
     '<div class ="shape">8</div>',
     '<div class ="shape">9</div>'
     ]
+
+function reset() {
+    columnCount = 41;
+    rowCount = 21;
+    shapeCount = 2;
+    iteration = 0;
+
+    refreshGrid()
+}
+
 
 // Generates a random integer between 0 and max
 function getRandomInt(max) {
@@ -169,25 +179,25 @@ function matrixToGrid(matrix) {
  // FUNCTIONS TO USE AS BUTTON ON THE PAGE 
  
  function addColumn() {
-     columnCount += counter;
+     columnCount += multiplier;
      refreshGrid() 
  }
  
  function removeColumn() {
      if (columnCount > 1) {
-         columnCount -= counter;
+         columnCount -= multiplier;
          refreshGrid() 
      }
  }
      
  function addRow() {
-     rowCount += counter;
+     rowCount += multiplier;
      refreshGrid() 
  }
  
  function removeRow() {
     if (rowCount > 1) {
-        rowCount -= counter;
+        rowCount -= multiplier;
         refreshGrid() 
     }
  }
@@ -212,14 +222,7 @@ function nextIteration() {
     matrixToGrid (valuesMatrix);
 }
  
-function reset() {
-    columnCount = 20;
-    rowCount = 20;
-    shapeCount = 2;
-    iteration = 0;
 
-    refreshGrid()
-}
 
 function toggleValues() {
     
@@ -248,5 +251,5 @@ function refreshGrid() {
 
 }
 
-refreshGrid(); 
+reset(); 
  
