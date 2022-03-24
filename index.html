@@ -10,6 +10,9 @@
     
 </head>
 <body>
+    <div id="test-div">
+        Hello, I am test DIV
+    </div>
     <div id="my-grid" class="grid-container">
         <div class="grid-item" style="background-color:hsl(250, 100%, 50%)">1</div>
         <div class="grid-item">2</div>
@@ -26,16 +29,51 @@
     
     <div id = "control_panel">
         <h3>Control Panel</h3>
-        <div class = "container">
-            <button class = "button"  onclick="toggleValues()">Toggle Values</button>
-            <button class = "button"  onclick="addRow()">Rows +</button>
-            <button class = "button"  onclick="removeRow()">Rows -</button>
-            <button class = "button"  onclick="addColumn()">Column +</button>
-            <button class = "button" onclick="removeColumn()">Column -</button>
-            <button class = "button"  onclick="addVariance()">Variance +</button>            
-            <button class = "button"  onclick="removeVariance()">Variance -</button>
-            <button class = "button"  onclick="reset()">Reset</button>
-            <button class = "button" id="next-gen"  onclick="nextIteration()">Next Gen</button>
+        <div class = "">
+            
+            <div class = "button-container">
+                <span id = "rows" class = "state-info">Rows: 0</span>
+                <button class = "button"  onclick="removeRow()">-</button>
+                <button class = "button"  onclick="addRow()">+</button>
+                
+            </div>
+
+            <div class = "button-container">
+                <span id = "columns" class = "state-info">Columns: 0</span>
+                <button class = "button"  onclick="removeColumn()">-</button>
+                <button class = "button"  onclick="addColumn()">+</button>
+            </div>
+
+            <div class = "button-container">
+                <span id = "variance" class = "state-info">Variance: 0</span>
+                <button class = "button"  onclick="removeVariance()">-</button>
+                <button class = "button"  onclick="addVariance()">+</button>
+            </div>
+
+            <div class = "button-container">
+                <span id = "neighborsSizeX" class = "state-info">Neighbors Size-X: 2</span>
+                <button class = "button"  onclick="decreaseNeighborX()">-</button>
+                <button class = "button"  onclick="increaseNeighborX()">+</button>
+                
+            </div>
+            
+            <div class = "button-container"> 
+                <span id = "neighborsSizeY" class = "state-info">Neighbors Size-Y: 2</span>
+                <button class = "button"  onclick="decreaseNeighborY()">-</button>
+                <button class = "button"  onclick="increaseNeighborY()">+</button>
+                
+            </div>
+
+            
+            <div class = "button-container-2">
+                <button class = "text-button"  onclick="toggleValues()">Toggle Values</button>
+                <button class = "text-button" id="next-gen"  onclick="nextIteration()">Next Gen</button>
+                <button class = "text-button"  onclick="reset()">Reset</button>
+            </div>
+
+
+            <!-- <button class = "button"  onclick="toggleValues()">Toggle Values</button> -->
+            
         </div>
 
 

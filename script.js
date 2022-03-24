@@ -5,7 +5,10 @@ var shapeCount = 0;
 var iteration = 0;
 const multiplier = 10;
 var showValues = false;
-var valuesMatrix = [[]]
+var valuesMatrix = [[]];
+var neighborsSizeX = 1;
+var neighborsSizeY = 1;
+// var directions = [[]];
 
 let testMatrix = [
     [0, 1, 0, 3, 5],
@@ -29,10 +32,12 @@ var shapeList = [
     ]
 
 function reset() {
-    columnCount = 41;
-    rowCount = 21;
-    shapeCount = 2;
+    columnCount = 51;
+    rowCount = 81;
+    shapeCount = 4;
     iteration = 0;
+    neighborsSizeX = 1;
+    neighborsSizeY = 1;
 
     refreshGrid()
 }
@@ -43,6 +48,25 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
+function generateDirections (m, n) {
+    let directions = [];
+    let rowCount = m*2+1;
+    let columnCount = n*2+1;
+
+    for (let i = 0; i < rowCount; i++) {
+        let matrixRow = [];
+        for (let j = 0; j < columnCount; j++) {
+            newI = i - m;
+            newJ = j - n;
+            
+            if (newI != 0 || newJ != 0 ) {
+                directions.push([newI, newJ])
+            }
+        }
+    }
+    return directions;
+
+}
 
 // Generates a matrix with random color values assigned to each point.
 function generateRandomMatrix (rowCount, columnCount, maxValue) {
@@ -63,11 +87,10 @@ function generateRandomMatrix (rowCount, columnCount, maxValue) {
 
  
  // Get the values for the neighboring cells for a given cell in a matrix
- function getNeighbors(i, j, matrix) {
+ function getNeighbors(i, j, matrix, directions) {
      let rowCount = matrix.length;
      let columnCount = matrix[0].length;
      // Note that in a matrix [1,0] translates into 1 down, and 0 right. 
-     let directions = [[1,0],[1,1],[0,1],[-1,1],[-1,0],[-1,-1],[0,-1],[1,-1]];
      let neighbors = [];
      
      for (d = 0; d < directions.length; d++) {
@@ -110,16 +133,17 @@ function mostCommon(list) {
 }
  
 // Create the next generation based on an initial matrix of values
-function nextGeneration (matrix){
+function nextGeneration (matrix, neighborsSizeX, neighborsSizeY){
     let rowCount = matrix.length;
     let columnCount = matrix[0].length;
     let newMatrix = [...matrix];
     let mostCommonElement = 0;
     let neighbors = [];
-    
+    let directions = generateDirections(neighborsSizeY, neighborsSizeX)
+
     for (let i = 0; i < rowCount; i++) {
         for (let j = 0; j < columnCount; j++) {
-            neighbors = getNeighbors (i, j, matrix);
+            neighbors = getNeighbors (i, j, matrix, directions);
             mostCommonElement = mostCommon (neighbors);
             newMatrix[i][j] = mostCommonElement;  
         }
@@ -215,10 +239,40 @@ function removeVariance() {
         refreshGrid()
     }
 }
+
+function increaseNeighborX() {
+    if (neighborsSizeX < 10) {
+        neighborsSizeX += 1;
+        updateCpState()
+    }
+}
+
+function decreaseNeighborX() {
+    if (neighborsSizeX > 0) {
+        neighborsSizeX -= 1;
+        updateCpState()
+    }
+}
+
+function increaseNeighborY() {
+    if (neighborsSizeY < 10) {
+        neighborsSizeY += 1;
+        updateCpState()
+    }
+}
+
+function decreaseNeighborY() {
+    if (neighborsSizeY > 0) {
+        neighborsSizeY -= 1;
+        updateCpState()
+    }
+}
+
+
  
 function nextIteration() {
     iteration += 1;
-    valuesMatrix = nextGeneration (valuesMatrix);
+    valuesMatrix = nextGeneration (valuesMatrix, neighborsSizeX, neighborsSizeY);
     matrixToGrid (valuesMatrix);
 }
  
@@ -244,11 +298,21 @@ function toggleValues() {
     
 }
 
+// Update the control panels state info
+function updateCpState() {
+    document.getElementById("rows").innerHTML = "Rows: "+ rowCount;
+    document.getElementById("columns").innerHTML = "Columns: "+ columnCount;
+    document.getElementById("variance").innerHTML = "Variance: "+ shapeCount;
+    document.getElementById("neighborsSizeX").innerHTML = "Neighbors Size-X: "+ neighborsSizeX;
+    document.getElementById("neighborsSizeY").innerHTML = "Neighbors Size-Y: "+ neighborsSizeY;
+
+}
+
 // Generate a new matrix and reload
 function refreshGrid() {
     valuesMatrix = generateRandomMatrix (rowCount, columnCount, shapeCount);
-    matrixToGrid (valuesMatrix)
-
+    matrixToGrid (valuesMatrix);
+    updateCpState()
 }
 
 reset(); 
