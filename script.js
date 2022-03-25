@@ -59,9 +59,7 @@ function generateDirections (m, n) {
             newI = i - m;
             newJ = j - n;
             
-            if (newI != 0 || newJ != 0 ) {
-                directions.push([newI, newJ])
-            }
+            directions.push([newI, newJ]);
         }
     }
     return directions;
