@@ -32,6 +32,20 @@ body {
     
 }
 
+#intro {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+
+    
+}
+
+#intro img{
+    width: 80px;
+    height: auto;
+    opacity: 0.8;
+}
+
 #control_panel {
     position: absolute;
     left: 25px;
@@ -104,7 +118,9 @@ body {
     
 }
 
-
+.small-text {
+    font-size: 0.7em;
+}
 
 .grid-container {
     position: absolute;
