@@ -7,26 +7,27 @@ html, body {
 body {
     height: 100vh;
     width: 100vw;
-    background-color: grey;
+    background-color: black;
     display: flex;
     justify-content: center;
     background-image: url(images/kam-idris-_HqHX3LBN18-unsplash.jpg);
-    background-size: 100vw 100vw;
-    background-position: 0vw 0vw;
+    background-size: 100vh 100vh;
+    background-position: 50% 0vw;
     background-repeat: no-repeat;
 }
 
+
 #test-div {
-    visibility: hidden;
+    visibility: visible;
     position: absolute;
-    left: 48vw;
-    top: 19.5vw;
+    left: calc(50vw - 8.8vh);
+    top: calc(0vw + 19vh);
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: red;
-    width: 14.2vw;
-    height: 24.5vw;
+    width: 17.5vh;
+    height: 25.6vh;
     
     
 }
@@ -36,7 +37,7 @@ body {
     left: 25px;
     right: auto;
     bottom: 25px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 1em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 2em;
@@ -107,15 +108,13 @@ body {
 
 .grid-container {
     position: absolute;
-    left: 48vw;
-    top: 19.5vw;
-    width: 14.2vw;
-    height: 24.5vw;
+    left: calc(50vw - 8.8vh);
+    top: calc(0vw + 19vh);
+    width: 17.5vh;
+    height: 25.6vh;
     overflow:hidden;
     
     /* visibility: hidden; */
-    /* height: 100%;
-    width: 100%; */
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     grid-template-rows: auto auto;
@@ -136,3 +135,10 @@ body {
     min-height: 1px;
 }
 
+
+@media screen and (max-width: 425px) {
+    #control_panel {
+        left: auto;
+        right: auto;
+    }
+}

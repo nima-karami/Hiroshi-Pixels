@@ -32,8 +32,8 @@ var shapeList = [
     ]
 
 function reset() {
-    columnCount = 51;
-    rowCount = 81;
+    columnCount = 51; //51
+    rowCount = 81; //81
     shapeCount = 4;
     iteration = 0;
     neighborsSizeX = 1;
