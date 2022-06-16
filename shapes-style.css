@@ -10,51 +10,400 @@
     color:grey
 }
 
-/* .triangle-up {
-    width: 0;
-    height: 0;
-    border-left: 50% solid transparent;
-    border-right: 50% solid transparent;
-    border-bottom: 100% solid black;
-  } */
 
-.value-0 {
-    background-color: white;
+/* COLOR STYLES */
+
+.color-0 {
+    background-color: rgba(224, 224, 224,0);
 }
 
-.value-1 {
+.color-1 {
     background-color: #202020;
 }
 
-.value-2 {
+.color-2 {
     background-color: #ffc700;
 }
 
-.value-3 {
+.color-3 {
     background-color: #ff4040;
 }
 
-.value-4 {
+.color-4 {
     background-color: #40a3ff;
 }
 
-.value-5 {
+.color-5 {
     background-color: orange;
 }
 
-.value-6 {
+.color-6 {
     background-color: purple;
 }
 
-.value-7 {
+.color-7 {
     background-color: pink;
 }
 
-.value-8 {
+.color-8 {
     background-color: grey;
 }
 
-.value-9 {
+.color-9 {
     background-color: red;
 }
 
+/* RECTANGLE STYLES */
+
+.rectangle-0 {
+    background-color: rgb(51, 51, 51);
+    margin-top: 25%;
+    margin-bottom: 25%;
+}
+
+.rectangle-1 {
+    background-color: rgb(51, 51, 51);
+    margin-left: 25%;
+    margin-right: 25%;
+    
+
+}
+
+.rectangle-2 {
+    background-color: rgb(51, 51, 51);
+    margin-top: 25%;
+    margin-bottom: 25%;
+    margin-left: 25%;
+    margin-right: 25%;
+
+}
+
+.rectangle-3 {
+    background-color: rgb(105, 105, 105);
+    margin-top: 25%;
+    margin-bottom: 25%;
+
+    
+}
+
+.rectangle-4 {
+    background-color:  rgb(105, 105, 105);
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.rectangle-5 {
+    background-color:  rgb(105, 105, 105);
+    margin-top: 25%;
+    margin-bottom: 25%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.rectangle-6 {
+    background-color: rgb(160, 160, 160);
+    margin-top: 25%;
+    margin-bottom: 25%;
+}
+
+.rectangle-7 {
+    background-color: rgb(160, 160, 160);
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.rectangle-8 {
+    background-color: rgb(160, 160, 160);
+    margin-top: 25%;
+    margin-bottom: 25%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.rectangle-9 {
+    background-color: rgb(219, 217, 217);
+    margin-top: 25%;
+    margin-bottom: 25%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+
+/* CIRCLE STYLES */
+.circle-0 {
+    background-color: rgb(51, 51, 51);
+    align-self: center;
+    justify-self: center;
+    border-radius: 50%;
+    height: 0;
+    width: 100%;
+    padding-bottom: 100%;
+}
+
+.circle-1 {
+    visibility: hidden;
+}
+
+.circle-2 {
+    background-color: rgb(51, 51, 51);
+    align-self: center;
+    justify-self: center;
+    border-radius: 50%;
+    height: 0;
+    width: 50%;
+    padding-bottom: 50%;
+
+}
+
+.circle-3 {
+    background-color: rgb(51, 51, 51);
+    align-self: center;
+    justify-self: center;
+    border-radius: 50%;
+    height: 0;
+    width: 20%;
+    padding-bottom: 20%;   
+        
+}
+
+.circle-4 {
+    background-color: rgb(51, 51, 51);
+    align-self: center;
+    justify-self: center;
+    border-radius: 50%;
+    height: 0;
+    width: 30%;
+    padding-bottom: 30%;
+}
+
+.circle-5 {
+    background-color: rgb(51, 51, 51);
+    align-self: center;
+    align-self: center;
+    justify-self: center;
+    border-radius: 50%;
+    height: 0;
+    width: 90%;
+    padding-bottom: 90%;
+}
+
+.circle-6 {
+    background-color: rgb(51, 51, 51);
+    align-self: center;
+    align-self: center;
+    justify-self: center;
+    border-radius: 50%;
+    height: 0;
+    width: 80%;
+    padding-bottom: 80%;
+}
+
+.circle-7 {
+    background-color: rgb(51, 51, 51);
+    align-self: center;
+    align-self: center;
+    justify-self: center;
+    border-radius: 50%;
+    height: 0;
+    width: 40%;
+    padding-bottom: 40%;
+}
+
+.circle-8 {
+    background-color: rgb(51, 51, 51);
+    align-self: center;
+    align-self: center;
+    justify-self: center;
+    border-radius: 50%;
+    height: 0;
+    width: 10%;
+    padding-bottom: 10%;
+}
+
+.circle-9 {
+    background-color: rgb(51, 51, 51);
+    align-self: center;
+    justify-self: center;
+    border-radius: 50%;
+    height: 0;
+    width: 70%;
+    padding-bottom: 70%;
+}
+
+/* STRIPE STYLES */
+.stripe-0 {
+    background: repeating-linear-gradient(0deg,rgba(224, 224, 224,0),rgba(224, 224, 224,0) 2px,black 2px,black 4px)
+}
+
+.stripe-1 {
+    background: repeating-linear-gradient(45deg,rgba(224, 224, 224,0),rgba(224, 224, 224,0) 2px,black 2px,black 4px)
+}
+
+.stripe-2 {
+    background: repeating-linear-gradient(90deg,rgba(224, 224, 224,0),rgba(224, 224, 224,0) 2px,black 2px,black 4px)
+}
+
+.stripe-3 {
+    background: repeating-linear-gradient(135deg,rgba(224, 224, 224,0),rgba(224, 224, 224,0) 2px,black 2px,black 4px)
+}
+
+.stripe-4 {
+    background: repeating-linear-gradient(0deg,rgba(224, 224, 224,0),rgba(224, 224, 224,0) 3px,black 3px,black 6px)
+}
+
+.stripe-5 {
+    background: repeating-linear-gradient(45deg,rgba(224, 224, 224,0),rgba(224, 224, 224,0) 3px,black 3px,black 6px)
+}
+
+.stripe-6 {
+    background: repeating-linear-gradient(90deg,rgba(224, 224, 224,0),rgba(224, 224, 224,0) 3px,black 3px,black 6px)
+}
+
+.stripe-7 {
+    background: repeating-linear-gradient(135deg,rgba(224, 224, 224,0),rgba(224, 224, 224,0) 3px,black 3px,black 6px)
+}
+
+.stripe-8 {
+    background: repeating-linear-gradient(45deg,rgba(224, 224, 224,0),rgba(224, 224, 224,0) 3px,black 3px,black 6px)
+}
+
+.stripe-9 {
+    background: repeating-linear-gradient(0deg,rgba(224, 224, 224,0),rgba(224, 224, 224,0) 4px,black 4px,black 8px)
+}
+
+
+/* FRAME STYLES */
+
+.frame-0 {
+    border: #70D6FF solid 8px;
+    background-color: #FF70A6;
+}
+
+.frame-1 {
+    border: #FF70A6 solid 5px;
+    background-color: #70D6FF;
+}
+
+.frame-2 {
+    border: #FFD670 solid 5px;
+    background-color: #FF9770;
+}
+
+.frame-3 {
+    border: #70D6FF solid 5px;
+    background-color: #FF70A6;
+}
+
+.frame-4 {
+    border: #FF70A6 solid 8px;
+    background-color: #70D6FF;
+}
+
+.frame-5 {
+    border: #FFD670 solid 8px;
+    background-color: #FF9770;
+}
+
+.frame-6 {
+    border: #FF9770 solid 5px;
+    background-color: #FFD670;
+}
+
+.frame-7 {
+    border: #FF70A6 solid 8px;
+    background-color: #70D6FF;
+}
+
+.frame-8 {
+    border: #70D6FF solid 5px;
+    background-color: #FFD670;
+}
+
+.frame-9 {
+    border: #FF9770 solid 8px;
+    background-color: #70D6FF;
+}
+
+
+/* BRICK STYLES*/
+
+.brick-0 {
+    margin: -25%;
+    border-radius: 50%;
+    background-color: #277da1;
+    transform: translate(50%, 10%);
+}
+
+.brick-1 {
+    margin: -50%;
+    background-color: #f9c74f;
+    border-radius: 50%;
+    transform: translate(50%, 10%);
+}
+
+.brick-2 {
+    margin: -25%;
+    background-color: #f94144;
+    border-radius: 50%;
+}
+
+.brick-3 {
+    margin: -25%;
+    border-radius: 50%;
+    background-color: rgba(224, 224, 224,0);
+    transform: translate(-50%, 25%);
+}
+
+.brick-4 {
+    margin: -75%;
+    border-radius: 50%;
+    background-color: #f3722c;
+    transform: translate(50%, 50%);
+}
+
+.brick-5 {
+    margin: -75%;
+    border-radius: 50%;
+    background-color: #43aa8b;
+    transform: translate(50%, 10%);
+}
+
+.brick-6 {
+    margin: -100%;
+    border-radius: 50%;
+    background-color: #f9c74f;
+    transform: translate(50%, 25%);
+}
+
+.brick-7 {
+    margin: -100%;
+    border-radius: 50%;
+    background-color: rgba(224, 224, 224,0);
+    transform: translate(50%, 50%);
+}
+
+.brick-8 {
+    margin: -50%;
+    border-radius: 50%;
+    background-color: #90be6d;
+    transform: translate(50%, 10%);
+}
+
+.brick-9 {
+    margin: -50%;
+    border-radius: 50%;
+    background-color: #f9844a;
+    transform: translate(50%, 10%);
+}
+
+
+/* GRADIENT DIAMONDS - Needs to complete*/
+
+.diamond-0 {
+    transform: rotate(45deg);
+    background-color: black;
+    border-radius: 5px;
+    height: 0;
+    width: 100%;
+    padding-bottom: 100%;
+}

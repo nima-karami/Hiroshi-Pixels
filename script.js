@@ -8,7 +8,9 @@ var showValues = false;
 var valuesMatrix = [[]];
 var neighborsSizeX = 1;
 var neighborsSizeY = 1;
-// var directions = [[]];
+var styles = ['stripe', 'color', 'rectangle', 'frame', 'circle', 'brick'];
+var styleIndex = 0;
+
 
 let testMatrix = [
     [0, 1, 0, 3, 5],
@@ -31,6 +33,7 @@ var shapeList = [
     '<div class ="shape">9</div>'
     ]
 
+// Reset the variables to default
 function reset() {
     columnCount = 51; //51
     rowCount = 81; //81
@@ -42,11 +45,24 @@ function reset() {
     refreshGrid()
 }
 
+// Change the graphic representation of the matrix
+function changeStyle() {
+    if (styleIndex === styles.length-1 ) {
+        styleIndex = 0
+    }
+    
+    else {
+        styleIndex += 1
+    }
 
-// Generates a random integer between 0 and max
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
+    matrixToGrid (valuesMatrix);
 }
+
+
+// Generates a random integer between min and max
+function getRandomInt(min, max) { 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  }
 
 function generateDirections (m, n) {
     let directions = [];
@@ -75,7 +91,7 @@ function generateRandomMatrix (rowCount, columnCount, maxValue) {
     for (let i = 0; i < rowCount; i++) {
         let matrixRow = [];
         for (let j = 0; j < columnCount; j++) {
-            matrixRow[j] = getRandomInt(maxValue);
+            matrixRow[j] = getRandomInt(0, maxValue);
         }
         matrix[i] = matrixRow;
     }
@@ -98,11 +114,7 @@ function generateRandomMatrix (rowCount, columnCount, maxValue) {
         let tempJ = directions[d][1] + j;
         if (tempI >= 0 && tempJ >= 0 && tempI < rowCount && tempJ < columnCount) {
             neighbors.push( matrix[tempI][tempJ])
-        }
-        //  let newI = (tempI + rowCount) % rowCount;
-         
-        //  let newJ = (tempJ  + columnCount) % columnCount;
-         
+        }        
          	         
      }
 
@@ -160,7 +172,7 @@ function matrixToList (matrix) {
             itemIndex = j + i*columnCount;
             list[itemIndex] = matrix[i][j];
         }
-        }
+    }
     return list;
 }
  
@@ -178,7 +190,7 @@ function matrixToGrid(matrix) {
     // Generate the HTML code
     for (let i = 0; i < gridCount; i++) {
         value = valueList[i] ;
-        gridHTML += '<div id = pixel-'+ i + ' class="grid-item value-'+value+'">'+ shapeList[value] + '</div>';   
+        gridHTML += `<div id = pixel-${i} class = "grid-item ${styles[styleIndex]}-${value}"> ${shapeList[value]} </div>`;   
     }
         
     // Generate the CSS code | Column style
@@ -295,6 +307,27 @@ function toggleValues() {
     }
     
 }
+
+// Randomize values
+function randomize(mutate = true) {
+    
+    columnCount = getRandomInt(20, 150);
+    rowCount = getRandomInt(20, 150);
+    shapeCount = getRandomInt(1, 9);
+    iteration = 0;
+    neighborsSizeX = getRandomInt(0, 4);
+    neighborsSizeY = getRandomInt(0, 4);
+    styleIndex = getRandomInt(0, styles.length-1);
+    valuesMatrix = generateRandomMatrix (rowCount, columnCount, shapeCount);
+
+    if (getRandomInt(0,1) && mutate) {
+        valuesMatrix = nextGeneration (valuesMatrix, neighborsSizeX, neighborsSizeY);
+    }
+
+    matrixToGrid (valuesMatrix);
+    updateCpState()
+}
+
 
 // Update the control panels state info
 function updateCpState() {

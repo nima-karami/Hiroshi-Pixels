@@ -18,7 +18,7 @@ body {
 
 
 #test-div {
-    visibility: visible;
+    visibility: hidden;
     position: absolute;
     left: calc(50vw - 8.8vh);
     top: calc(0vw + 19vh);
@@ -134,7 +134,7 @@ body {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     grid-template-rows: auto auto;
-    background-color: grey;
+    
     padding: 0px;
 }
 
