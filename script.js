@@ -339,7 +339,7 @@ function toggleHelp() {
     }
 
     else {
-        console.log('B');
+        element.classList.toggle("popup-visible");
         showPopup = false; 
         
     }
