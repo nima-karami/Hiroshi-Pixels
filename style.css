@@ -65,6 +65,34 @@ body {
     margin: 0 0 1em 0;
 }
 
+.popup {
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    top:30vh;
+    left: 30vw;
+    width: 40vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+    visibility: hidden;
+}
+
+.popup-visible {
+    visibility: visible;
+}
+
+.popup-close-btn {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+.popup-body {
+    padding: 5em;
+}
+
 .button-container {
     display: grid;
     grid-template-columns: 6fr 1fr 1fr;

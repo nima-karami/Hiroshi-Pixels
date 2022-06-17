@@ -24,6 +24,12 @@
         <img src="images/hiroshi-pixels-logo-white.png" alt = "Hiroshi Pixels" >
     </div>
 
+    <div class = "popup">
+        <button class = "popup-close-btn" onclick="toggleHelp()">close</button>
+        <div class = "popup-body">
+            Designed and Engineered an interactive computer-generated art inspired by the works of Hiroshi Kawano (1925-2012), a Japanese pioneer of computer art.
+        </div>
+    </div>
     
     <div id = "control_panel">
         <h3>Control Panel</h3>
@@ -65,10 +71,11 @@
             
             <div class = "button-container-2">
                 <!-- <button class = "text-button"  onclick="toggleValues()">Toggle Values</button> -->
-                <button class = "text-button" id="next-gen"  onclick="changeStyle()">Change Style</button>
-                <button class = "text-button" id="next-gen"  onclick="randomize()">Randomize</button>
-                <button class = "text-button" id="next-gen"  onclick="nextIteration()">Next Gen</button>
-                <button class = "text-button"  onclick="reset()">Reset</button>
+                <button class = "text-button" id = "next-gen"  onclick = "changeStyle()">Change Style</button>
+                <button class = "text-button" id = "next-gen"  onclick = "randomize()">Randomize</button>
+                <button class = "text-button" id = "next-gen"  onclick = "nextIteration()">Next Gen</button>
+                <button class = "text-button"  onclick = "reset()">Reset</button>
+                <button class = "text-button"  onclick = "toggleHelp()">Help</button>
             </div>
 
             <div class = "button-container-2">

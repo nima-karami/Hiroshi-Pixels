@@ -10,6 +10,7 @@ var neighborsSizeX = 1;
 var neighborsSizeY = 1;
 var styles = ['stripe', 'color', 'rectangle', 'frame', 'circle', 'brick'];
 var styleIndex = 0;
+var showPopup = false;
 
 
 let testMatrix = [
@@ -327,6 +328,22 @@ function randomize(mutate = true) {
     matrixToGrid (valuesMatrix);
     updateCpState()
 }
+
+function toggleHelp() {
+    let element = document.getElementsByClassName('popup')[0];
+
+    if (!showPopup) {
+        element.classList.toggle("popup-visible");
+        showPopup = true;
+        
+    }
+
+    else {
+        console.log('B');
+        showPopup = false; 
+        
+    }
+}   
 
 
 // Update the control panels state info
