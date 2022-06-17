@@ -106,7 +106,7 @@ body {
     height: 70%;
     margin: 3em;
     padding-right: 2em;
-    overflow-y: scroll;
+    overflow-y: auto;
     font-style: italic;
 }
 
