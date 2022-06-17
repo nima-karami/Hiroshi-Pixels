@@ -76,21 +76,30 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 1em;
-    visibility: hidden;
+    display: none;
+    transition: 300ms;
 }
 
 .popup-visible {
-    visibility: visible;
+    display: flex;
 }
 
 .popup-close-btn {
     position: absolute;
-    top: 1em;
-    right: 1em;
+    top: 0.5em;
+    right: 0.6em;
+    font-size: 2em;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.popup-close-btn:hover {
+    color: grey;
 }
 
 .popup-body {
     padding: 5em;
+    font-style: italic;
 }
 
 .button-container {

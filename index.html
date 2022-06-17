@@ -9,7 +9,8 @@
     <link rel="stylesheet" type = "text/css" href="shapes-style.css">
     <link rel="shortcut icon" type="image/x-icon" href="images\hiroshi-pixels-favicon.png" />
 
-
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
 </head>
 <body>
     <div id="test-div">
@@ -25,9 +26,12 @@
     </div>
 
     <div class = "popup">
-        <button class = "popup-close-btn" onclick="toggleHelp()">close</button>
+        <a class = "popup-close-btn" onclick="toggleHelp()"><i class="fa-solid fa-xmark"></i></a>
         <div class = "popup-body">
-            Designed and Engineered an interactive computer-generated art inspired by the works of Hiroshi Kawano (1925-2012), a Japanese pioneer of computer art.
+            Hiroshi Pixels is an interactive computer-generated art inspired by the works of Hiroshi Kawano (1925-2012), a Japanese pioneer of computer art. <br><br>
+            This artwork generates a random matrix using variables including row count, column count, and variance. Then, the values in the matrix are visually represented
+            with a number of distinct graphic styles developed for this artwork. Finally, a genetic algorithm is employed to change the value of each cell based on its most common neighbor. <br><br>
+            Use the control panel on the bottom left of this page to customize this artwork to your liking! 
         </div>
     </div>
     
