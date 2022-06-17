@@ -36,12 +36,13 @@ var shapeList = [
 
 // Reset the variables to default
 function reset() {
-    columnCount = 51; //51
-    rowCount = 81; //81
-    shapeCount = 4;
+    columnCount = 21; //51
+    rowCount = 21; //81
+    shapeCount = 8;
     iteration = 0;
     neighborsSizeX = 1;
     neighborsSizeY = 1;
+    styleIndex = 0;
 
     refreshGrid()
 }
